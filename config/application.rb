@@ -17,7 +17,6 @@ Bundler.require(*Rails.groups)
 
 module MyAbout
   class Application < Rails::Application
-    config.serve_static_assets = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -33,5 +32,6 @@ module MyAbout
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    config.serve_static_assets = true
   end
 end
